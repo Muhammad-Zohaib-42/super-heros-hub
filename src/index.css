@@ -1,2 +1,13 @@
+@import "https://fonts.googleapis.com/css2?family=Bangers&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
 
 @import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+    --font-bangers: "Bangers", system-ui;
+    --font-oswald: "Oswald", sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *))

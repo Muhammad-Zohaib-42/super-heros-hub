@@ -2,7 +2,9 @@ import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 export type HeroContextType = {
     herosData: HeroObj[];
-    setHerosData: Dispatch<SetStateAction<HeroObj[]>>
+    setHerosData: Dispatch<SetStateAction<HeroObj[]>>,
+    isDark: boolean,
+    setIsDark: Dispatch<SetStateAction<boolean>>
 };
 
 export type HeroProviderProps = {
