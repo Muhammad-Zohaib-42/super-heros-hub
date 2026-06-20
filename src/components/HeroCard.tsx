@@ -1,40 +1,91 @@
-export default function HeroCard({hero}) {
-  // const hero = {
-  //   name: "A-Bomb",
-  //   powerstats: { strength: "100", speed: "17" },
-  //   biography: { publisher: "Marvel Comics", alignment: "good" },
-  //   image: { url: "https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg" }
-  // };
+import type { HeroObj } from "../types/types";
 
+type HeroCardProps = {
+  hero: HeroObj;
+};
+
+const HeroCard = ({ hero }: HeroCardProps) => {
   return (
-    <div className="flex items-center gap-4 p-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all">
-      {/* Small Image */}
-      <img className="w-20 h-20 rounded-lg object-cover" src={hero.image.url} alt={hero.name} />
-      
-      {/* Content */}
-      <div className="flex-1">
-        <div className="flex justify-between items-center">
-          <h3 className="font-bold text-lg text-gray-900 dark:text-white">{hero.name}</h3>
-          <span className={`text-[10px] px-2 py-0.5 rounded-md uppercase font-bold 
-            ${hero.biography.alignment === 'good' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-            {hero.biography.alignment}
-          </span>
+    <div className="group relative overflow-hidden rounded-2xl bg-white dark:bg-neutral-950 p-6 font-sans shadow-md shadow-slate-500 dark:shadow-2xl">
+      {/* <div className="absolute -top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-lime-500/10 blur-3xl transition-all duration-700 group-hover:bg-lime-500/15"></div> */}
+
+      <div className="relative flex flex-col gap-5">
+        <div className="flex items-start justify-between border-b border-neutral-800 pb-5">
+          <div className="flex items-center gap-3">
+            <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-lime-400/10">
+              <img className="h-full w-full object-cover rounded-lg" src={hero.image.url} alt="" />
+            </div>
+            <div>
+              <p className="font-semibold dark:text-neutral-200">Monthly Balance</p>
+              <p className="text-xs text-neutral-500">Updated just now</p>
+            </div>
+          </div>
         </div>
-        
-        <p className="text-xs text-gray-500 mb-2">{hero.biography.publisher}</p>
-        
-        {/* Compact Stats */}
-        <div className="flex gap-4">
-          <div className="text-xs">
-            <span className="text-gray-400">STR:</span> 
-            <span className="ml-1 font-semibold dark:text-white">{hero.powerstats.strength}</span>
+
+        <div className="flex divide-x divide-neutral-800">
+          <div className="flex-1 pr-6">
+            <p className="text-xs font-medium text-neutral-500">Revenue</p>
+            <p className="text-xl font-semibold text-neutral-100">$51,274</p>
+            <p className="mt-1 text-xs font-medium text-lime-400">+8.5%</p>
           </div>
-          <div className="text-xs">
-            <span className="text-gray-400">SPD:</span> 
-            <span className="ml-1 font-semibold dark:text-white">{hero.powerstats.speed}</span>
+          <div className="flex-1 pl-6">
+            <p className="text-xs font-medium text-neutral-500">Costs</p>
+            <p className="text-xl font-semibold text-neutral-100">$12,818</p>
+            <p className="mt-1 text-xs font-medium text-red-400">+2.1%</p>
           </div>
+        </div>
+
+        <div className="relative h-24 w-full">
+          <svg
+            className="h-full w-full"
+            viewBox="0 0 300 100"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient
+                id="aurora-gradient-v2"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+              >
+                <stop
+                  offset="0%"
+                  stop-color="#a3e635"
+                  stop-opacity="0.2"
+                ></stop>
+                <stop
+                  offset="100%"
+                  stop-color="#a3e635"
+                  stop-opacity="0"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,65 C50,20 80,80 150,70 S250,50 300,85"
+              fill="none"
+              stroke="#a3e635"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M0,100 L0,65 C50,20 80,80 150,70 S250,50 300,85 L300,100 Z"
+              fill="url(#aurora-gradient-v2)"
+            ></path>
+          </svg>
+          <div className="absolute right-[-1px] top-[81px]">
+            <div className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime-400 shadow-lg shadow-lime-400/50"></div>
+            <div className="animate-pulse-strong absolute h-full w-full rounded-full bg-lime-400/25"></div>
+          </div>
+        </div>
+
+        <div className="border-t border-neutral-800 pt-5">
+          <button className="w-full rounded-lg border border-lime-400/50 bg-transparent px-4 py-2 text-sm font-medium text-lime-400 transition-colors duration-300 hover:bg-lime-400 hover:text-neutral-950">
+            View Full Report
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default HeroCard;
