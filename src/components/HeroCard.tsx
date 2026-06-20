@@ -1,10 +1,10 @@
-export default function HeroCard() {
-  const hero = {
-    name: "A-Bomb",
-    powerstats: { strength: "100", speed: "17" },
-    biography: { publisher: "Marvel Comics", alignment: "good" },
-    image: { url: "https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg" }
-  };
+export default function HeroCard({hero}) {
+  // const hero = {
+  //   name: "A-Bomb",
+  //   powerstats: { strength: "100", speed: "17" },
+  //   biography: { publisher: "Marvel Comics", alignment: "good" },
+  //   image: { url: "https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg" }
+  // };
 
   return (
     <div className="flex items-center gap-4 p-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all">
