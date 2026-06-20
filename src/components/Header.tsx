@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react"
 import { HeroContext } from "../contexts/HeroContext"
-import { FaMoon, FaSearch, FaSun } from "react-icons/fa"
+import { FaMoon, FaSun } from "react-icons/fa"
 
 const Header = () => {
   const {isDark, setIsDark} = useContext(HeroContext)!

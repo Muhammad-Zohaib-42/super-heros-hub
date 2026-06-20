@@ -4,7 +4,9 @@ export type HeroContextType = {
     herosData: HeroObj[];
     setHerosData: Dispatch<SetStateAction<HeroObj[]>>,
     isDark: boolean,
-    setIsDark: Dispatch<SetStateAction<boolean>>
+    setIsDark: Dispatch<SetStateAction<boolean>>,
+    searchHero: HeroObj | null,
+    setSearchHero: Dispatch<SetStateAction<HeroObj | null>>
 };
 
 export type HeroProviderProps = {
