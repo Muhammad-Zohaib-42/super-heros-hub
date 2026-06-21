@@ -1,14 +1,11 @@
 import { createContext, useState, type FC } from "react";
 import type { HeroContextType, HeroObj, HeroProviderProps } from "../types/types";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { data } from "../utils/data";
 
 export const HeroContext = createContext<HeroContextType | null>(null)
 
 export const HeroProvider: FC<HeroProviderProps> = ({children}) => {
-    const {getData} = useLocalStorage()
-    const data = getData()
-
-    const [herosData, setHerosData] = useState<HeroObj[] | string[]>(data || [])
+    const [herosData, setHerosData] = useState<HeroObj[] | string[]>(data)
     const [isDark, setIsDark] = useState<boolean>(true)
     const [searchHero, setSearchHero] = useState<HeroObj[]>([])
     const [searchError, setSearchError] = useState<string>("")

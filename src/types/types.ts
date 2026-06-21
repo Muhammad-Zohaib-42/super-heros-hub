@@ -16,20 +16,20 @@ export type HeroProviderProps = {
 };
 
 type Powerstats = {
-  intelligence: string;
-  strength: string;
-  speed: string;
-  durability: string;
-  power: string;
-  combat: string;
+  intelligence: number;
+  strength: number;
+  speed: number;
+  durability: number;
+  power: number;
+  combat: number;
 };
 
 type Biography = {
-  "full-name": string;
-  "alter-egos": string;
+  fullName: string;
+  alterEgos: string;
   aliases: string[];
-  "place-of-birth": string;
-  "first-appearance": string;
+  placeOfBirth: string;
+  firstAppearance: string;
   publisher: string;
   alignment: string;
 };
@@ -39,8 +39,8 @@ type Appearance = {
     race: string;
     height: string[];
     weight: string[];
-    "eye-color": string;
-    "hair-color": string;
+    eyeColor: string;
+    hairColor: string;
 }
 
 type Work = {
@@ -49,22 +49,25 @@ type Work = {
 }
 
 type Connections = {
-    "group-affiliation": string;
+    groupAffiliation: string;
     relatives: string;
 }
 
 type Image = {
-    url: string
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
 }
 
 export type HeroObj = {
-  response: string;
-  id: string;
+  id: number;
   name: string;
+  slug: string;
   powerstats: Powerstats;
   biography: Biography;
   appearance: Appearance;
   work: Work;
   connections: Connections;
   image: Image;
-} | string;
+};
