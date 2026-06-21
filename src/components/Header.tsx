@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState, type FormEvent } from "react"
 import { HeroContext } from "../contexts/HeroContext"
 import { FaMoon, FaSun } from "react-icons/fa"
+import { data } from "../utils/data"
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState<string>("")
@@ -16,18 +17,13 @@ const Header = () => {
 
     if (!searchQuery) return
 
-    setSearchError("")
+    const filterHeros = data.filter(obj => obj.name.toLowerCase().includes(searchQuery.toLowerCase()))
 
-    fetch(`/superhero/api.php/${import.meta.env.VITE_ACCESS_TOKEN}/search/${searchQuery}`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.response == "error") {
-        setSearchError(data.error)
-      } else {
-        setSearchHero(data.results)
-      }
-    })
-    .catch(error => console.log(error.message))
+    if (filterHeros.length < 1) {
+      setSearchError("Hero with this name not found")
+    } else {
+      setSearchHero(filterHeros)
+    }
 
     setSearchQuery("")
   }

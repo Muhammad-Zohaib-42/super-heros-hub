@@ -30011,7 +30011,7 @@ export const data = [
 },
 "connections": {
 "groupAffiliation": "The Avengers, The West Coast Avengers, Secret Defenders",
-"relatives": "Maria Trovaya (first wife, deceased), Janet Van Dyne a.k.a. The Wasp (second wife, divorced), Ultron (creation, "son"), Jocasta ("first daughter-in-law"), Alkhema ("second daughter-in-law"), Vision ("grandson"), Scarlet Witch (former granddaughter-in-law), Victor Mancha ("grandson")"
+"relatives": "Maria Trovaya (first wife, deceased), Janet Van Dyne a.k.a. The Wasp (second wife, divorced), Ultron (creation, son), Jocasta (first daughter-in-law), Alkhema (second daughter-in-law), Vision (grandson), Scarlet Witch (former granddaughter-in-law), Victor Mancha (grandson)"
 },
 "images": {
 "xs": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/xs/726-yellowjacket.jpg",
@@ -30219,7 +30219,7 @@ export const data = [
 },
 "connections": {
 "groupAffiliation": "Misty Kilgore, Seven Soldiers of Victory, Justice League, Sentinels of Magic",
-"relatives": "Giovanni "John" Zatara (father, deceased), Sindella (mother, deceased), Leonardo da Vinci (paternal ancestor, deceased)"
+"relatives": "Giovanni John Zatara (father, deceased), Sindella (mother, deceased), Leonardo da Vinci (paternal ancestor, deceased)"
 },
 "images": {
 "xs": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/xs/730-zatanna.jpg",

@@ -1,17 +1,21 @@
+import { useContext } from "react";
 import type { HeroObj } from "../types/types";
+import { HeroContext } from "../contexts/HeroContext";
 
-type HeroCardProps = {
+export type HeroCardProps = {
   hero: HeroObj;
 };
 
 const HeroCard = ({ hero }: HeroCardProps) => {
+  const {setShowProfile} = useContext(HeroContext)!
+
   return (
     <div className="group relative overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-neutral-950 p-6 font-sans dark:shadow-2xl">
       <div className="relative flex flex-col gap-5">
         <div className="flex items-start justify-between pb-0">
           <div className="flex items-center gap-3 grow">
             <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-lime-400/10 shrink-0">
-              <img className="h-full w-full object-cover rounded-lg" src={hero.image.url} alt={`${hero.name} image`} loading="lazy" />
+              <img className="h-full w-full object-cover rounded-lg" src={hero.images.sm} alt={`${hero.name} image`} loading="lazy" />
             </div>
             <div className="grow">
               <div className="flex items-center justify-between">
@@ -36,7 +40,7 @@ const HeroCard = ({ hero }: HeroCardProps) => {
             </div>
           </div>
         </div>
-        <button className="w-full rounded-lg border border-lime-400/50 bg-transparent px-4 py-2 text-sm font-medium text-lime-400 transition-colors duration-300 hover:bg-lime-400 hover:text-neutral-950 cursor-pointer">View Hero Profile</button>
+        <button onClick={() => setShowProfile(hero)} className="w-full rounded-lg border border-lime-400/50 bg-transparent px-4 py-2 text-sm font-medium text-lime-400 transition-colors duration-300 hover:bg-lime-400 hover:text-neutral-950 cursor-pointer">View Hero Profile</button>
       </div>
     </div>
   );

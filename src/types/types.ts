@@ -1,14 +1,16 @@
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 export type HeroContextType = {
-    herosData: HeroObj[] | string[];
-    setHerosData: Dispatch<SetStateAction<HeroObj[] | string[]>>,
+    herosData: HeroObj[];
+    setHerosData: Dispatch<SetStateAction<HeroObj[]>>,
     isDark: boolean,
     setIsDark: Dispatch<SetStateAction<boolean>>,
     searchHero: HeroObj[],
     setSearchHero: Dispatch<SetStateAction<HeroObj[]>>,
     searchError: string,
-    setSearchError: Dispatch<SetStateAction<string>>
+    setSearchError: Dispatch<SetStateAction<string>>,
+    showProfile: HeroObj | null,
+    setShowProfile: Dispatch<SetStateAction<HeroObj | null>>
 };
 
 export type HeroProviderProps = {
@@ -53,7 +55,7 @@ type Connections = {
     relatives: string;
 }
 
-type Image = {
+type Images = {
     xs: string;
     sm: string;
     md: string;
@@ -69,5 +71,5 @@ export type HeroObj = {
   appearance: Appearance;
   work: Work;
   connections: Connections;
-  image: Image;
+  images: Images;
 };
