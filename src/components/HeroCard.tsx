@@ -11,7 +11,7 @@ const HeroCard = ({ hero }: HeroCardProps) => {
         <div className="flex items-start justify-between pb-0">
           <div className="flex items-center gap-3 grow">
             <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-lime-400/10 shrink-0">
-              <img className="h-full w-full object-cover rounded-lg" src={hero.image.url} alt="" />
+              <img className="h-full w-full object-cover rounded-lg" src={hero.image.url} alt={`${hero.name} image`} loading="lazy" />
             </div>
             <div className="grow">
               <div className="flex items-center justify-between">
@@ -36,7 +36,7 @@ const HeroCard = ({ hero }: HeroCardProps) => {
             </div>
           </div>
         </div>
-        <button className="w-full rounded-lg border border-lime-400/50 bg-transparent px-4 py-2 text-sm font-medium text-lime-400 transition-colors duration-300 hover:bg-lime-400 hover:text-neutral-950 cursor-pointer">View Full Report</button>
+        <button className="w-full rounded-lg border border-lime-400/50 bg-transparent px-4 py-2 text-sm font-medium text-lime-400 transition-colors duration-300 hover:bg-lime-400 hover:text-neutral-950 cursor-pointer">View Hero Profile</button>
       </div>
     </div>
   );
